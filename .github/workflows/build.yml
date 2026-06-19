@@ -30,7 +30,7 @@ jobs:
       - name: Build
         run: |
           chmod +x ./gradlew
-          ./gradlew clean build --no-daemon
+          ./gradlew -Dorg.gradle.java.home="$JAVA_HOME" clean build --no-daemon
 
       - name: Collect plugin artifact
         shell: bash
