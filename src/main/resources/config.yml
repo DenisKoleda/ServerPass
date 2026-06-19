@@ -1,0 +1,31 @@
+auth:
+  enabled: true
+  requireEveryJoin: true
+  timeoutSeconds: 60
+  maxAttempts: 3
+  bypassPermission: serverpass.bypass
+  allowOpsBypass: false
+
+password:
+  algorithm: PBKDF2WithHmacSHA256
+  iterations: 210000
+  salt: ""
+  hash: ""
+
+lock:
+  allowLookAround: true
+  blockMovement: true
+  blockBlockBreak: true
+  blockBlockPlace: true
+  blockInteract: true
+  blockInventory: true
+  blockItemDrop: true
+  blockItemPickup: true
+  blockChat: true
+  blockCommandsExceptLogin: true
+  blockDamage: true
+  protectFromDamage: true
+
+audit:
+  enabled: true
+  file: audit.log

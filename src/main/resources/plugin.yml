@@ -1,0 +1,38 @@
+name: ServerPass
+version: ${version}
+main: com.denis.serverpass.ServerPassPlugin
+api-version: '26.2'
+authors:
+  - denis
+description: One shared server password gate for Paper/Purpur 26.2.
+commands:
+  login:
+    description: Unlock this session with the shared server password.
+    usage: /login <password>
+  serverpass:
+    description: ServerPass administration commands.
+    usage: /serverpass help
+permissions:
+  serverpass.admin:
+    description: Allows ServerPass administration commands except bypass.
+    default: op
+    children:
+      serverpass.set: true
+      serverpass.reload: true
+      serverpass.forceauth: true
+      serverpass.selftest: true
+  serverpass.set:
+    description: Allows changing the shared password.
+    default: op
+  serverpass.reload:
+    description: Allows reloading ServerPass config and messages.
+    default: op
+  serverpass.bypass:
+    description: Allows joining without entering the shared password.
+    default: false
+  serverpass.forceauth:
+    description: Allows forcing session auth/logout for players.
+    default: op
+  serverpass.selftest:
+    description: Allows running ServerPass selftest.
+    default: op
